@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年度地震潛勢圖 - 轉接頁面</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 全域基礎設定 */
+        body { 
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif; 
+            background-color: #f0f7f6; 
+            margin: 0; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 主卡片容器 */
+        .main-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            width: 100%;
+            border: 1px solid #d1e4e2;
+        }
+
+        /* 標題區：使用地震相關的色系 (深藍色) */
+        .title-section {
+            margin-bottom: 20px;
+            border-left: 8px solid #2980b9; 
+            padding-left: 15px;
+        }
+
+        h1 { 
+            color: #2c3e50; 
+            margin: 0; 
+            font-size: 1.8rem; 
+        }
+
+        /* 圖片展示區 */
+        .map-container {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #eee;
+            background-color: #f9f9f9;
+        }
+
+        /* 地震潛勢圖截圖 */
+        .screenshot {
+            width: 100%;
+            display: block;
+            opacity: 0.9; 
+            transition: 0.3s;
+        }
+
+        /* 覆蓋在圖片上的說明區塊 */
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 85%;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .instruction {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* 立體膠囊按鈕 (配合地震主題改為藍色系) */
+        .btn-redirect {
+            display: inline-block;
+            border-radius: 50px; 
+            transition: all 0.2s ease; 
+            border: 2px solid #2c3e50; 
+            background-color: #f0f8ff; 
+            box-shadow: 0 5px 0px #2980b9; 
+            padding: 18px 45px;
+            color: #1a252f; 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 1.3rem;
+            position: relative;
+            top: 0;
+        }
+
+        .btn-redirect:hover { 
+            top: 3px;
+            box-shadow: 0 2px 0px #2980b9;
+            background-color: #fff;
+        }
+
+        .footer-note {
+            text-align: right;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .overlay-content { padding: 20px; width: 90%; }
+            .instruction { font-size: 1rem; }
+            .btn-redirect { padding: 12px 30px; font-size: 1.1rem; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-card">
+    <div class="title-section">
+        <h1>年度地震潛勢圖</h1>
+    </div>
+
+    <div class="map-container">
+        <img src="https://raw.githubusercontent.com/rchmpncu/hc-eocdss-earthquakerisk/main/earthquakerisk-map.png" alt="年度地震潛勢圖截圖" class="screenshot">
+        
+        <div class="overlay-content">
+            <div class="instruction">
+                <i class="fas fa-exclamation-triangle" style="color: #2980b9;"></i><br>
+                因網站安全防護機制限制嵌入，<br>
+                請點擊下方按鈕，直接前往官方網站。
+            </div>
+            
+            <a href="https://scweb.cwa.gov.tw/zh-tw/earthquake/potential" target="_blank" class="btn-redirect">
+                進入官方網站 <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        資料來源：中央氣象署地震測報中心
+    </div>
+</div>
+
+</body>
+</html>
